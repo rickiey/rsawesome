@@ -35,7 +35,7 @@ struct PenaltyMsg {
 }
 
 pub fn use_mysql() {
-    let url = "mysql://root:mYGi_HuQ6VZdq755eCmx@111.19.254.154:3306/mine_info";
+    let url = "mysql://root:passwd@127.0.0.1:3306/mine_info";
     // let pool = mysql::Pool::new(url).unwrap(); // 获取连接池
     // let mut conn = pool.get_conn().unwrap(); // 获取链接
 
