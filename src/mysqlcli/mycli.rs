@@ -153,3 +153,15 @@ impl PenaltyMsg {
         };
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn new_penalty() {
+        let pm = PenaltyMsg::new();
+        println!("{:?}", pm);
+        assert_eq!(pm.amount_v, 0.0);
+        assert_eq!(pm.id, None);
+    }
+}

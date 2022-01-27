@@ -3,7 +3,7 @@ use std::fmt;
 // use typename::TypeName;
 
 // 带有两个数字的结构体。推导出 `Debug`，以便与 `Display` 的输出进行比较。
-#[derive(Debug)]
+#[derive(Debug,Eq,Clone,Copy,Hash,Ord, PartialOrd, PartialEq)]
 pub struct MinMax(pub i64, pub i64);
 
 // 实现 `MinMax` 的 `Display`。
