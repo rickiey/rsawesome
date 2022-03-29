@@ -22,7 +22,12 @@ fn main() {
     // extern_lib::json_parse::use_serde_json();
     // leet_code::container_moster_water::test_001();
     algorithm::sort::quick::use_quick_sort();
-    return;
+    // return;
+
+    // let asfasd: Option<i32> = None;
+
+    // print!("{}", asfasd.unwrap().expect("asfasd"));
+
     extern_lib::req::use_reqwest();
     max_area(vec![2, 3, 1, 5, 7]);
 
@@ -97,4 +102,16 @@ pub fn max_area(height: Vec<i32>) -> i32 {
         }
     }
     return max_a;
+}
+
+#[test]
+fn test_max_areas() {
+    assert_eq!(max_area(vec![1, 8, 7]), 7);
+}
+
+mod test_mod {
+    #[test]
+    fn test_max_area() {
+        assert_eq!(super::max_area(vec![1, 8, 6, 2, 5, 4, 8, 3, 7]), 49);
+    }
 }
