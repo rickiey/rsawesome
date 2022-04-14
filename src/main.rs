@@ -10,6 +10,8 @@ mod struct_trait;
 
 #[macro_use]
 extern crate serde_derive;
+
+// use serde::__private::de::Content::Some;
 use crate::algorithm::sort;
 
 #[warn(unused_imports)]
@@ -19,29 +21,32 @@ use fmt_print::print_std::prints as ps;
 use struct_trait::strait::{use_trait, MinMax, Point2D};
 
 fn main() {
+
+    let s = String::from("hello");
+    let mut s2 = String::from("world");
+    s2.push_str(&s);
+
+
+    println!("{}", s2);
+
+    assert_eq!(s2, "worldhello");
+    return;
+
     // extern_lib::json_parse::use_serde_json();
     // leet_code::container_moster_water::test_001();
     algorithm::sort::quick::use_quick_sort();
     // return;
-
-    // let asfasd: Option<i32> = None;
-
-    // print!("{}", asfasd.unwrap().expect("asfasd"));
-
     extern_lib::req::use_reqwest();
     max_area(vec![2, 3, 1, 5, 7]);
 
     let p = Person {
         job: Some(Job {
-            phone_number: Some(PhoneNumber {
-                area_code: None,
-                number: 439222222,
-            }),
+            phone_number: Some(PhoneNumber { area_code: None, number: 439222222, }),
         }),
     };
     p.work_phone_area_code().map(|f| println!("{}", f));
 
-    return;
+    // return;
 
     let _m1 = MinMax(0, 0);
     let _m2 = Point2D { x: 0.0, y: 0.0 };
@@ -51,7 +56,8 @@ fn main() {
     sts();
     enume::enumerate::use_enum();
 
-    // println!("{}", _m1::type_name());
+    println!("{}", _m1);
+    println!("{}", _m2);
 
     coll::use_vec();
     coll::use_map();
@@ -102,16 +108,4 @@ pub fn max_area(height: Vec<i32>) -> i32 {
         }
     }
     return max_a;
-}
-
-#[test]
-fn test_max_areas() {
-    assert_eq!(max_area(vec![1, 8, 7]), 7);
-}
-
-mod test_mod {
-    #[test]
-    fn test_max_area() {
-        assert_eq!(super::max_area(vec![1, 8, 6, 2, 5, 4, 8, 3, 7]), 49);
-    }
 }

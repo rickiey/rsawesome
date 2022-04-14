@@ -1,3 +1,4 @@
+// use typename::fmt;
 use std::fmt;
 // 导入 `fmt`
 // use typename::TypeName;
@@ -17,6 +18,7 @@ impl fmt::Display for MinMax {
 // 为了比较，定义一个含有具名字段的结构体。
 #[derive(Debug)]
 pub struct Point2D {
+
     pub x: f64,
     pub y: f64,
 }
@@ -43,7 +45,7 @@ impl Point2D {
     }
 
     fn area_calc(x: f64, y: f64) -> f64 {
-        return x * y;
+        x * y
     }
 }
 
