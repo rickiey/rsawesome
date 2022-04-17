@@ -7,7 +7,7 @@ use serde_json::Value as jsonValue;
 #[derive(Serialize, Deserialize, Debug)]
 pub struct Res {
     #[serde(rename(serialize = "code", deserialize = "code"))]
-    Code: String,
+    code: String,
 }
 
 pub fn use_serde_json() {
@@ -18,10 +18,10 @@ pub fn use_serde_json() {
     println!("{}", res["code"].as_str().unwrap());
 
     let r: Res =serde_json::from_str(json_raw).unwrap();
-    println!("{}", r.Code);
+    println!("{}", r.code);
 
     let rr :Res = Res {
-        Code: "non".to_string(),
+        code: "non".to_string(),
     };
 
     let a = serde_json::to_string(&rr).unwrap();
