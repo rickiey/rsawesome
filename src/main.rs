@@ -31,13 +31,14 @@ async fn main() -> Result<(), Box<dyn std::error::Error +'static>>{
     let loglvl = env::var("RUST_LOG").unwrap_or("warn".to_string());
     println!("{}", loglvl);
     // let f = future_async::use_future();
-    extern_lib::rusqlite::use_sqlite();
+    // extern_lib::rusqlite::use_sqlite();
+    extern_lib::trace_opentelemetry::use_opentelemetry();
     extern_lib::http_ureq::use_ureq();
-    let rs = extern_lib::sqlxlite::use_sqlx().await?;
+    // let rs = extern_lib::sqlxlite::use_sqlx().await?;
 
     // let a = block_on(extern_lib::sqlxlite::use_sqlx());
 
-    println!("{:?}", rs.len());
+    // println!("{:?}", rs.len());
     // join(a, f).await;
     Ok(())
     // extern_lib::json_parse::use_serde_json();

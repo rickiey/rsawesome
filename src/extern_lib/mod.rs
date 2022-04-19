@@ -4,3 +4,4 @@ pub mod slog;
 pub mod sqlxlite;
 pub mod rusqlite;
 pub mod http_ureq;
+pub mod trace_opentelemetry;
